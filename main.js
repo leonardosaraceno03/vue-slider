@@ -11,6 +11,9 @@ var  app= new Vue(
             ],
             position : 0,
         },
+        mounted: {
+            
+        },
         methods: {
             next: function(){
                 if(this.position == this.imgArray.length - 1){
@@ -25,6 +28,12 @@ var  app= new Vue(
                 }else{
                     this.position --;
                 }
+        },
+        attivaIntervallo(){
+            setInterval(()=>{ this.next() },3000);
+        },
+        selezionaImmagini(index){
+            this.position = index
         }
     }
 }
